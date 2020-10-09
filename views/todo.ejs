@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quest</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.0/css/all.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+    <script src="/static/todo-list.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <h1>Daily Programming Quest</h1>
+
+      <a href="https://youtu.be/fmI_Ndrxy14" target="_blank"
+        ><img src="/static/logo.png" alt=""
+      /></a>
+    </div>
+    <div id="todo-table">
+      <% if (todos.length > 0) { %>
+      <h1 class="hidden-h">Your Quest:</h1>
+
+      <% } else { %>
+      <form autocomplete="off" class="form" action="">
+        <input
+          type="text"
+          name="item"
+          placeholder="Add new quest..."
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+      <% }; %>
+      <ul>
+        <% for (var i = 0; i < todos.length; i++) { %>
+        <li>
+          <div class="item"><%= todos[i].item %></div>
+          <div class="icons">
+            <i id="jedna" class="icon far fa-check-circle"></i
+            ><i class="icon fas fa-trash" id="dva"></i>
+          </div>
+        </li>
+        <% }; %>
+      </ul>
+    </div>
+    <div class="footer">
+      <p>&copy; I will give some algoritma</p>
+    </div>
+  </body>
+</html>
